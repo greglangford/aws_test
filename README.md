@@ -32,4 +32,6 @@ Once you have succesfully run "terraform apply" you should see some outputs in g
 Congratulations you have built yourself some infrastucture with terraform and provisioned it with ansible. Unless you would like your bill to grow it's probably now time to destroy the infrastucture. From within the terraform folder run terraform destroy -force this will kill everything we created through terraform.
 
 #### Improvements
-There are ways we could improve this example. One way would be to bake an AMI with a cloud-config script that can provision the instance and add it into a load balancer. This way we could create an autoscaling group and not worry about having to run ansible each time a new node comes online.
+There are ways we could improve this example. One way would be to bake an AMI with a cloud-config script that can provision the instance and add it into a load balancer. This way we could create an autoscaling group and not worry about having to run ansible each time a new node comes online. This would also make the solution scaleable as extra web nodes could be bought online quickly.
+
+We might also consider using remote state so that multiple developers could work on this at the same time.
