@@ -1,0 +1,11 @@
+---
+
+- name: index page
+  template: src=index.html.j2 dest=/var/www/html/index.html
+
+- name: get metadata
+  command: ec2metadata --instance-id
+  register: metadata
+
+- name: load balance
+  command: aws elb register-instances-with-load-balancer --load-balancer-name '{{ elb_name }}' --instances '{{ metadata.stdout }}' --region '{{ aws_region }}'

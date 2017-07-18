@@ -1,0 +1,4 @@
+---
+
+aws_region: eu-west-1
+elb_name: elb-web-balancer
