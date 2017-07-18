@@ -35,3 +35,5 @@ Congratulations you have built yourself some infrastucture with terraform and pr
 There are ways we could improve this example. One way would be to bake an AMI with a cloud-config script that can provision the instance and add it into a load balancer. This way we could create an autoscaling group and not worry about having to run ansible each time a new node comes online. This would also make the solution scaleable as extra web nodes could be bought online quickly.
 
 We might also consider using remote state so that multiple developers could work on this at the same time.
+
+To secure this setup we could opt to put the web instances in a private subnet, we could then have a Bastion host in the public subnet which we can use to get to our web instances on the private subnet. This would however need a bit of configuration within ssh_config to specify a ssh ProxyCommand
