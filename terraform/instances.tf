@@ -15,7 +15,8 @@ resource "aws_instance" "web_1" {
   associate_public_ip_address = true
 
   tags {
-    Name = "web-1"
+    Name  = "web-1",
+    Class = "web-server"
   }
 }
 
@@ -31,7 +32,8 @@ resource "aws_instance" "web_2" {
   associate_public_ip_address = true
 
   tags {
-    Name = "web-2"
+    Name = "web-2",
+    Class = "web-server"
   }
 }
 
