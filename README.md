@@ -2,14 +2,16 @@
 ### Using Terraform, Ansible and AWS
 
 #### Prerequisites
-Terraform 0.9.6 (may work on others)
-Ansible 2.2.1.0 (may work on others)
-AWS SSH keypair created and private part loader in local keychain.
+* Terraform 0.9.6 (may work on others)
+* Ansible 2.2.1.0 (may work on others)
+* AWS SSH keypair created and private part loader in local keychain.
 
-1. Create a file call secrets in the root of this repo, the file should contain the below. Ensure to change AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY to your own. Leave AWS_DEFAULT_REGION as is.
+1. Create a file call secrets in the root of this repo, the file should contain the below. Ensure to change AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY to your own. Leave AWS_DEFAULT_REGION as is. Each export statement should be on it's own line.
 
 > export AWS_ACCESS_KEY_ID="xxxxxxxxxx"
+>
 > export AWS_SECRET_ACCESS_KEY="xxxxxxxxxx"
+>
 > export AWS_DEFAULT_REGION="eu-west-1"
 
 2. Ensure you have create a keypair within your AWS account. Note the name for the keypair, in my case this is glangford.
